@@ -3,7 +3,6 @@ import type { Profissional } from '../models/Profissional';
 import type { VisitanteProjeto } from './VisitanteProjeto';
 
 export class ValidadorConsistencia implements VisitanteProjeto {
-  // Todos os papeis exigidos estao preenchidos e o orcamento cobre o custo da equipe
   visitarProjeto(projeto: Projeto): boolean {
     const membros = projeto.equipe?.membros ?? [];
     const papeisPreenchidos = projeto.papeis.every((papel) => membros.some((m) => m.papel === papel));

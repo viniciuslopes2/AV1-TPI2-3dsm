@@ -6,7 +6,6 @@ export interface RecomendacaoStrategy {
   recomendar(projeto: Projeto, profissionais: Profissional[]): Map<Papel, Profissional[]>;
 }
 
-// Todas as estrategias usam o mesmo ranking para cada papel exigido pelo projeto
 export function rankingParaOsPapeisDoProjeto(projeto: Projeto, ranking: Profissional[]): Map<Papel, Profissional[]> {
   const recomendacoes = new Map<Papel, Profissional[]>();
   for (const papel of projeto.papeis) {
